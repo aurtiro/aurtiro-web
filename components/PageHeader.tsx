@@ -8,10 +8,46 @@ export default function PageHeader({
   subtitle?: string;
 }) {
   return (
-    <section className="max-w-5xl mx-auto px-6 pt-24 pb-16 border-b border-line">
-      <div className="text-xs uppercase tracking-wider text-muted mb-4">{eyebrow}</div>
-      <h1 className="text-4xl md:text-6xl font-semibold tracking-tight mb-6">{title}</h1>
-      {subtitle && <p className="text-lg text-muted max-w-2xl leading-relaxed">{subtitle}</p>}
+    <section
+      className="max-w-5xl mx-auto px-6 pt-24 pb-16"
+      style={{ borderBottom: '1px solid var(--surface-divider)' }}
+    >
+      <div
+        className="mb-4"
+        style={{
+          fontFamily: 'var(--font-geist)',
+          fontSize: '11px',
+          fontWeight: 500,
+          letterSpacing: '1.5px',
+          textTransform: 'uppercase',
+          color: 'var(--text-tertiary)',
+        }}
+      >
+        {eyebrow}
+      </div>
+      <h1
+        className="mb-6 tracking-tight"
+        style={{
+          fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+          fontWeight: 600,
+          lineHeight: 1.1,
+          color: 'var(--text-primary)',
+        }}
+      >
+        {title}
+      </h1>
+      {subtitle && (
+        <p
+          className="max-w-2xl"
+          style={{
+            fontSize: '17px',
+            lineHeight: '1.7',
+            color: 'var(--text-body)',
+          }}
+        >
+          {subtitle}
+        </p>
+      )}
     </section>
   );
 }
